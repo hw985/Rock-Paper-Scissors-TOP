@@ -35,6 +35,7 @@ function playGame() {
         const computerChoice = getComputerChoice();
         const humanChoice = getHumanChoice();
         const roundResult = playRound(humanChoice, computerChoice);
+        console.log(`Round ${i + 1}:`);
         console.log(`Computer chose: ${computerChoice}`);
         console.log(`You chose: ${humanChoice}`);
         console.log(roundResult.result);
@@ -43,7 +44,5 @@ function playGame() {
     return {humanScore, computerScore};
 
 }
-const computerChoice = getComputerChoice();
-const humanChoice = getHumanChoice();
 playGame();
 console.log(`Current Score - You: ${humanScore}, Computer: ${computerScore}`);
