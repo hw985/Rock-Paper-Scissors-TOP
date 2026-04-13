@@ -30,7 +30,7 @@ function playRound(humanChoice, computerChoice) {
     return {result, humanScore, computerScore};
 }
 
-function playGame() {
+/* function playGame() {
     for (let i = 0; i <= 4; i++) {
         const computerChoice = getComputerChoice();
         const humanChoice = getHumanChoice();
@@ -43,6 +43,18 @@ function playGame() {
     }
     return {humanScore, computerScore};
 
-}
-playGame();
+} */
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".player-input");
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const humanChoice = button.id;
+            const computerChoice = getComputerChoice();
+            const roundResult = playRound(humanChoice, computerChoice);
+            console.log(`Computer chose: ${computerChoice}`);
+            console.log(`You chose: ${humanChoice}`);
+            console.log(roundResult.result);
+        });
+    });
+}); 
 console.log(`Current Score - You: ${humanScore}, Computer: ${computerScore}`);
